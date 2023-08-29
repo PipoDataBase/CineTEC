@@ -1,2 +1,2 @@
 # CineTEC
-asd
+CE Homework for the Databases Course CE3101
