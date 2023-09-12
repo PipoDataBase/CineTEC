@@ -1,0 +1,67 @@
+<div class="container my-5">
+    <h1 class="mb-3 custom-h1">Proyecciones</h1>
+    <mat-select placeholder="Seleccionar sucursal" [(ngModel)]="selectedBranchId"
+        (ngModelChange)="onBranchSelectionChange($event)" class="custom-select">
+        <mat-option *ngFor="let branch of branches" [value]="branch.id">
+            {{ branch.location }} / {{ branch.name }}
+        </mat-option>
+    </mat-select>
+
+    <div class="my-3" *ngIf="selectedBranchId">
+        <mat-label class="label-select my-3">Seleccionar sala:</mat-label>
+        <table class="table my-3" *ngIf="rooms && rooms.length > 0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Número Filas</th>
+                    <th>Número Columnas</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let room of rooms, let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ room.n_Rows }}</td>
+                    <td>{{ room.n_Columns }}</td>
+                    <td>
+                        <mat-checkbox [checked]="room.id === selectedRoomId"
+                            (change)="onSelectRoom(room.id, $event)"></mat-checkbox>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="!rooms || rooms.length <= 0">No se encontraron salas</p>
+    </div>
+
+    <div *ngIf="selectedRoomId && roomChecked">
+        <button mat-stroked-button color="accent" class="btn-block custom-button" (click)="addProjection()">Agregar
+            Proyección</button>
+        <table class="table my-3" *ngIf="projections && projections.length > 0">
+            <thead>
+                <tr>
+                    <th>Fecha y Hora</th>
+                    <th>Película</th>
+                    <th>Tipo Proyección</th>
+                    <th>Lenguaje</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let projection of projections">
+                    <td>{{ projection.dateTime }}</td>
+                    <td>{{ putMovie(projection.movie_Id) }}</td>
+                    <td>{{ projection.projectionType }}</td>
+                    <td>{{ projection.language }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm"
+                            (click)="editProjection(projection.room_Id, projection.id)">Editar</button>
+                        <span class="mx-1"></span>
+                        <button type="button" class="btn btn-danger btn-sm"
+                            (click)="deleteProjection(projection.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="!projections|| projections.length <= 0">No se encontraron proyecciones</p>
+    </div>
+</div>

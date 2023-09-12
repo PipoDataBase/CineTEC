@@ -1,0 +1,41 @@
+<div class="container my-5">
+    <h1 class="mb-3 custom-h1">Salas</h1>
+    <mat-select placeholder="Seleccionar sucursal" [(ngModel)]="selectedBranchId"
+        (ngModelChange)="onBranchSelectionChange($event)" class="custom-select">
+        <mat-option *ngFor="let branch of branches" [value]="branch.id">
+            {{ branch.location }} / {{ branch.name }}
+        </mat-option>
+    </mat-select>
+
+    <div class="my-3" *ngIf="selectedBranchId">
+        <button mat-stroked-button color="accent" class="btn-block custom-button" (click)="addRoom()">Agregar
+            Sala</button>
+        <table class="table my-3" *ngIf="rooms && rooms.length > 0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Número Filas</th>
+                    <th>Número Columnas</th>
+                    <th>Número Proyecciones</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let room of rooms, let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ room.n_Rows }}</td>
+                    <td>{{ room.n_Columns }}</td>
+                    <td>{{ room.n_Projections }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm"
+                            [routerLink]="['/cinetec', 'edit-room', room.branch_Id, room.id]">Editar</button>
+                        <span class="mx-1"></span>
+                        <button type="button" class="btn btn-danger btn-sm"
+                            (click)="deleteRoom(room.id)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p *ngIf="!rooms || rooms.length <= 0">No se encontraron salas</p>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container my-3">
+    <h1 class="mb-3">Editar Sala</h1>
+    <div class="row">
+        <div class="col-4">
+            <form #form="ngForm">
+                <div class="form-and-button-container">
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Número Filas</mat-label>
+                        <input matInput placeholder="Número Filas" type="number" id="n_Rows" name="n_Rows"
+                            [(ngModel)]="roomDetails.n_Rows" min="0" max="20">
+                    </mat-form-field>
+                </div>
+                <div class="form-and-button-container">
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Número Columnas</mat-label>
+                        <input matInput placeholder="Número Columnas" type="number" id="n_Columns" name="n_Columns"
+                            [(ngModel)]="roomDetails.n_Columns" min="0" max="20">
+                    </mat-form-field>
+                </div>
+                <div class="form-and-button-container">
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Número Proyecciones</mat-label>
+                        <input matInput placeholder="Número Proyecciones" type="number" id="n_Projections"
+                            name="n_Projections" [(ngModel)]="roomDetails.n_Projections" readonly="">
+                    </mat-form-field>
+                    <button mat-stroked-button class="btn-block custom-edit" (click)="editProjections()">Editar</button>
+                </div>
+                <button mat-stroked-button class="btn-block custom-back" (click)="back()">Regresar</button>
+                <span class="mx-1"></span>
+                <button mat-stroked-button class="btn-block custom-save" (click)="updateRoom()">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

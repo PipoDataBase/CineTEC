@@ -1,0 +1,63 @@
+<div class="container my-3">
+    <h1 class="mb-3">Agregar Película</h1>
+    <div class="row">
+        <div class="col-4">
+            <form #form="ngForm">
+                <div class="mb-2">
+                    <label for="imagePath" class="form-label">Imagen</label>
+                    <input type="file" class="form-control" id="imagePath" name="imagePath"
+                        (change)="onImageSelected($event)">
+                </div>
+                <div>
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Nombre Original</mat-label>
+                        <input matInput placeholder="Nombre Original" type="text" id="originalName" name="originalName"
+                            [(ngModel)]="addMovieRequest.originalName">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Director</mat-label>
+                        <input matInput placeholder="Director" type="text" id="director" name="director"
+                            [(ngModel)]="addMovieRequest.director">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Nombre Comercial</mat-label>
+                        <input matInput placeholder="Nombre Comercial" type="text" id="commercialName"
+                            name="commercialName" [(ngModel)]="addMovieRequest.commercialName">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-select placeholder="Clasificación" [(ngModel)]="addMovieRequest.classification"
+                        name="classification" class="custom-select">
+                        <mat-option value="G">G</mat-option>
+                        <mat-option value="PG">PG</mat-option>
+                        <mat-option value="PG-13">PG-13</mat-option>
+                        <mat-option value="R">R</mat-option>
+                        <mat-option value="NC-17">NC-17</mat-option>
+                        <mat-option value="NR">NR</mat-option>
+                    </mat-select>
+                </div>
+                <div>
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Protagonistas</mat-label>
+                        <input matInput placeholder="Protagonistas" type="text" id="protagonists" name="protagonists"
+                            [(ngModel)]="addMovieRequest.protagonists">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Duración</mat-label>
+                        <input matInput placeholder="Duración" type="number" id="duration" name="duration"
+                            [(ngModel)]="addMovieRequest.duration" min="0">
+                    </mat-form-field>
+                </div>
+                <button mat-stroked-button class="btn-block custom-back" (click)="back()">Regresar</button>
+                <span class="mx-1"></span>
+                <button mat-stroked-button class="btn-block custom-save" (click)="addMovie()">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

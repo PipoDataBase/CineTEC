@@ -1,0 +1,14 @@
+.custom-button {
+    background-color: #17477E;
+    color: white !important;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.table {
+    text-align: center;
+}

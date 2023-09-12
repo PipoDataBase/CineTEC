@@ -1,0 +1,26 @@
+<div class="container my-3">
+    <h1 class="mb-3">Agregar Sala</h1>
+    <div class="row">
+        <div class="col-4">
+            <form #form="ngForm">
+                <div>
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Número Filas</mat-label>
+                        <input matInput placeholder="Número Filas" type="number" id="n_Rows" name="n_Rows"
+                            [(ngModel)]="addRoomRequest.n_Rows" min="0" max="20">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="custom-mat-form-field">
+                        <mat-label>Número Columnas</mat-label>
+                        <input matInput placeholder="Número Columnas" type="number" id="n_Columns" name="n_Columns"
+                            [(ngModel)]="addRoomRequest.n_Columns" min="0" max="20">
+                    </mat-form-field>
+                </div>
+                <button mat-stroked-button class="btn-block custom-back" (click)="back()">Regresar</button>
+                <span class="mx-1"></span>
+                <button mat-stroked-button class="btn-block custom-save" (click)="addRoom()">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

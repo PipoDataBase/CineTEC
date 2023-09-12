@@ -1,0 +1,40 @@
+<div class="container my-3">
+    <h1 class="mb-3">Agregar Proyección</h1>
+    <div class="row">
+        <div class="col-4">
+            <form #form="ngForm">
+                <div class="mb-3">
+                    <mat-select placeholder="Seleccionar película" [(ngModel)]="selectedMovieId" name="movieId"
+                        class="custom-select">
+                        <mat-option *ngFor="let movie of movies" [value]="movie.id">
+                            {{ movie.originalName }} / {{ movie.director }}
+                        </mat-option>
+                    </mat-select>
+                </div>
+                <div class="mb-3 custom-datetimepicker">
+                    <ejs-datetimepicker placeholder="Seleccionar fecha y hora"
+                        [(ngModel)]="addProjectionRequest.dateTime" name="dateTime" [min]="minDate" [max]="maxDate"
+                        class="custom-datetimepicker"></ejs-datetimepicker>
+                </div>
+                <div class="mb-3">
+                    <mat-select placeholder="Tipo de Proyección" [(ngModel)]="addProjectionRequest.projectionType"
+                        name="projectionType" class="custom-select">
+                        <mat-option value="2D">2D</mat-option>
+                        <mat-option value="3D">3D</mat-option>
+                        <mat-option value="IMAX">IMAX</mat-option>
+                    </mat-select>
+                </div>
+                <div class="mb-3">
+                    <mat-select placeholder="Lenguaje" [(ngModel)]="addProjectionRequest.language" name="language"
+                        class="custom-select">
+                        <mat-option value="DOB">DOB</mat-option>
+                        <mat-option value="SUB">SUB</mat-option>
+                    </mat-select>
+                </div>
+                <button mat-stroked-button class="btn-block custom-back" (click)="back()">Regresar</button>
+                <span class="mx-1"></span>
+                <button mat-stroked-button class="btn-block custom-save" (click)="addProjection()">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

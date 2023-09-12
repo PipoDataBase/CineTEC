@@ -1,0 +1,29 @@
+<div class="container my-5">
+    <h1 class="mb-3">Sucursales</h1>
+    <button mat-stroked-button class="btn-block custom-button" (click)="addBranch()">Agregar Sucursal</button>
+    <table class="table my-3" *ngIf="branchoffices && branchoffices.length > 0">
+        <thead>
+            <tr>
+                <th>Ubicación</th>
+                <th>Nombre</th>
+                <th>Número Salas</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let branch of branchoffices">
+                <td>{{ branch.location }}</td>
+                <td>{{ branch.name }}</td>
+                <td>{{ branch.n_Rooms }}</td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-sm"
+                        [routerLink]="['/cinetec', 'edit-branch', branch.id]">Editar</button>
+                    <span class="mx-1"></span>
+                    <button type="button" class="btn btn-danger btn-sm"
+                        (click)="deleteBranch(branch.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!branchoffices || branchoffices.length <= 0">No se encontraron sucursales</p>
+</div>

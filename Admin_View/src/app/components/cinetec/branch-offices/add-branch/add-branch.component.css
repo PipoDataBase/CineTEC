@@ -1,0 +1,32 @@
+.custom-mat-form-field {
+    width: 100%;
+}
+
+.custom-mat-form-field input:-webkit-autofill {
+    -webkit-background-clip: text;
+}
+
+.custom-back {
+    background-color: #e13a2d;
+    color: white !important;
+}
+
+.custom-save {
+    background-color: var(--primary);
+    color: white !important;
+}
+
+.custom-edit {
+    background-color: #158282;
+    color: white !important;
+    margin-bottom: 20px;
+}
+
+.form-and-button-container {
+    display: flex;
+    align-items: center;
+}
+
+.custom-mat-form-field {
+    margin-right: 9px;
+}

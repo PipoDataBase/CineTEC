@@ -1,0 +1,40 @@
+<div class="container my-5">
+    <h1 class="mb-3 custom-h1">Películas</h1>
+    <button mat-stroked-button color="accent" class="btn-block custom-button" (click)="addMovie()">Agregar
+        Película</button>
+    <table class="table my-3" *ngIf="movies && movies.length > 0">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre Original</th>
+                <th>Director</th>
+                <th>Nombre Comercial</th>
+                <th>Clasificación</th>
+                <th>Protagonistas</th>
+                <th>Duración</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let movie of movies">
+                <td>
+                    <img src="{{ movie.imagePath }}" alt="{{ movie.originalName }}" style="max-height: 80px;">
+                </td>
+                <td>{{ movie.originalName }}</td>
+                <td>{{ movie.director }}</td>
+                <td>{{ movie.commercialName }}</td>
+                <td>{{ movie.classification }}</td>
+                <td>{{ movie.protagonists }}</td>
+                <td>{{ movie.duration + " min" }}</td>
+                <td>
+                    <button type="button" class="btn btn-primary btn-sm"
+                        [routerLink]="['/cinetec', 'edit-movie', movie.id]">Editar</button>
+                    <span class="mx-1"></span>
+                    <button type="button" class="btn btn-danger btn-sm"
+                        (click)="deleteMovie(movie.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!movies || movies.length <= 0">No se encontraron películas</p>
+</div>
