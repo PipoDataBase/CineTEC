@@ -1,0 +1,82 @@
+.branchOfficeSelection-wrapper {
+    height: 100%;
+    background-image: url("../../../../assets/branchOfficeSelectionBg.jpg");
+}
+
+.branchOfficeSelection-wrapper .example-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    max-width: 300px;
+    width: 100%;
+}
+
+.branchOfficeSelection-wrapper .example-full-width {
+    width: 100%;
+}
+
+.branchOfficeSelection-wrapper .example-full-width input:-webkit-autofill {
+    -webkit-background-clip: text;
+}
+
+.branchOfficeSelection-wrapper .btn-block {
+    width: 92%;
+}
+
+.branchOfficeSelection-wrapper .custom-button {
+    background-color: var(--primary);
+    color: white !important;
+    text-transform: uppercase;
+}
+
+.branchOfficeSelection-wrapper mat-card-header {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+}
+
+.branchOfficeSelection-wrapper mat-card-header mat-card-title {
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.branchOfficeSelection-wrapper .cine {
+    color: var(--primary);
+}
+
+.branchOfficeSelection-wrapper .tec {
+    color: #4F4F4F;
+}
+
+.branchOfficeSelection-wrapper mat-label {
+    font-size: 20px;
+    width: 100%;
+    text-align: left;
+    margin-top: 25px;
+    color: #4F4F4F;
+}
+
+.branchOfficeSelection-wrapper .mat-card {
+    padding: 40px 70px 50px;
+}
+
+.branchOfficeSelection-wrapper .mat-stroked-button {
+    border: 1px solid currentColor;
+    line-height: 54px;
+    background: #FFF7FA;
+}
+
+.branchOfficeSelection-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 0.8375em 0;
+}
+
+.custom-select {
+    width: 450px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
