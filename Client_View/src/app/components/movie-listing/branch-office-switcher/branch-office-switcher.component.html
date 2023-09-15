@@ -1,0 +1,17 @@
+<div class="branchOfficeSwitcher-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <button (click)="goToMovieListing()" style="background: none; border: none; cursor: pointer; padding: 0;">
+        <mat-label class="cine">Cine</mat-label>
+        <mat-label class="tec">TEC</mat-label>
+      </button>
+    
+    <div class="locationSwitcher" fxLayout="column" fxLayoutAlign="center center">
+        <mat-label class="location-branchOffice-Label">Ubicacion</mat-label>
+        <mat-select placeholder="Seleccionar ubicacion" class="custom-select"></mat-select>
+    </div>
+    <div class="branchOfficeSwitcher" fxLayout="column" fxLayoutAlign="center center">
+        <mat-label class="location-branchOffice-Label">Sucursal</mat-label>
+        <mat-select placeholder="Seleccionar ubicacion" class="custom-select"></mat-select>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

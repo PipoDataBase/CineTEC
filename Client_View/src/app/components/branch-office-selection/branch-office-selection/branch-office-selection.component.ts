@@ -7,7 +7,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./branch-office-selection.component.css']
 })
 export class BranchOfficeSelectionComponent {
-  username: string = '';
-  password: string = '';
 
 }

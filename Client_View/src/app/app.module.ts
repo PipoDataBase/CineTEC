@@ -23,11 +23,16 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 // Firebase
 import { AngularFireModule, FirebaseApp } from '@angular/fire/compat';
+import { BranchOfficeSwitcherComponent } from './components/movie-listing/branch-office-switcher/branch-office-switcher.component';
+import { MovieListingComponent } from './components/movie-listing/movie-listing/movie-listing.component';
+import { BillingTicketsInformationComponent } from './components/movie-listing/billing-tickets-information/billing-tickets-information.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BranchOfficeSelectionComponent
+    BranchOfficeSelectionComponent,
+    BranchOfficeSwitcherComponent,
+    MovieListingComponent,
   ],
   imports: [
     BrowserModule,

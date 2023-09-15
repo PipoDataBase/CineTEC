@@ -1,0 +1,18 @@
+<div class="movieListing-grid">
+    <mat-card *ngFor="let movie of moviesData; let i=index" fxLayout="column">
+        <img src="../../../../assets/Movies/Op.jpg" alt="Movie Poster" style="width: 200px; height: 355px;"/>
+        <mat-label class="h1"> {{ movie[1] }} </mat-label>
+        <mat-label class="h2"> {{ movie[2] }} </mat-label>
+        <div class="durationClassification-wrapper" fxLayout="row">
+            <mat-card>
+                <mat-label>{{ movie[3] }}</mat-label>
+            </mat-card>
+            <mat-card>
+                <mat-label>{{ movie[4] }}</mat-label>
+            </mat-card>
+        </div>
+        <mat-label class="h3">Director: {{ movie[5] }} </mat-label>
+        <mat-label class="h3">Protagonists: {{ movie[6] }} </mat-label>
+        <button mat-stroked-button (click)="buyTicketsButton(i)">Buy Tickets</button>
+    </mat-card>
+</div>
