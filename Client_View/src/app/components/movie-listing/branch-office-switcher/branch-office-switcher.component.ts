@@ -161,4 +161,11 @@ export class BranchOfficeSwitcherComponent {
       }
     }
   }
+
+  buyTicketsButton(index: number){
+    const textoClickeado = this.moviesData[index];
+    console.log(this.moviesData[index]);
+    this.selectedBranchId = '';
+    this.router.navigate(["branchOfficeSwitcher", this.selectedBranchId, "billingTicketInformation"]);
+  }
 }
