@@ -149,7 +149,10 @@ export class BranchOfficeSwitcherComponent {
               Duration: movie.duration,
               Clasification: movie.classification,
               Director: movie.director,
-              Protagonists: movie.protagonists
+              Protagonists: movie.protagonists,
+              ProjectionType: projection.projectionType,
+              Language: projection.language,
+              DateTime: projection.dateTime
             };
             
             this.moviesData.push(movieProjection);

@@ -26,19 +26,27 @@
 
 <div class="movieListing-grid" *ngIf="selectedBranchId">
     <mat-card *ngFor="let movie of moviesData; let i=index" fxLayout="column">
-        <img src="{{ movie.ImagePath }}" alt="Movie Poster" style="width: 200px; height: 355px;"/>
-        <mat-label class="h1"> {{ movie.CommercialTitle }} </mat-label>
-        <mat-label class="h2"> {{ movie.OriginalTitle }} </mat-label>
+        <img src="{{ movie.ImagePath }}" alt="Movie Poster" style="width: 200px; height: 300px;"/>
+        <mat-label class="h1"> {{ movie.OriginalTitle }} </mat-label>
         <div class="durationClassification-wrapper" fxLayout="row">
             <mat-card>
-                <mat-label>{{ movie.Duration }}</mat-label>
+                <mat-label>{{ movie.Duration + ' min' }}</mat-label>
             </mat-card>
             <mat-card>
                 <mat-label>{{ movie.Clasification }}</mat-label>
             </mat-card>
         </div>
-        <mat-label class="h3">Director: {{ movie.Director }} </mat-label>
-        <mat-label class="h3">Protagonists: {{ movie.Protagonists }} </mat-label>
+        <div class="durationClassification-wrapper" fxLayout="row">
+            <mat-card>
+                <mat-label>{{ movie.ProjectionType}}</mat-label>
+            </mat-card>
+            <mat-card>
+                <mat-label>{{ movie.Language }}</mat-label>
+            </mat-card>
+            <mat-card>
+                <mat-label>{{ movie.DateTime }}</mat-label>
+            </mat-card>
+        </div>
         <button mat-stroked-button>Buy Tickets</button>
     </mat-card>
 </div>
