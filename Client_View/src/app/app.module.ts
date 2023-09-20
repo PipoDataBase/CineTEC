@@ -1,15 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 // Routing
 import { AppRoutingModule } from './app-routing.module';
 
 // Angular Material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BranchOfficeSelectionComponent } from './components/branch-office-selection/branch-office-selection/branch-office-selection.component';
 
 // Syncfusion
 import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule } from '@syncfusion/ej2-angular-calendars';
@@ -23,6 +21,11 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 // Firebase
 import { AngularFireModule, FirebaseApp } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+
+// Components
+import { AppComponent } from './app.component';
+import { BranchOfficeSelectionComponent } from './components/branch-office-selection/branch-office-selection/branch-office-selection.component';
 import { BranchOfficeSwitcherComponent } from './components/movie-listing/branch-office-switcher/branch-office-switcher.component';
 import { MovieListingComponent } from './components/movie-listing/movie-listing/movie-listing.component';
 import { BillingTicketsInformationComponent } from './components/movie-listing/billing-tickets-information/billing-tickets-information.component';
@@ -39,10 +42,12 @@ import { BillingTicketsInformationComponent } from './components/movie-listing/b
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    CalendarModule,  DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
-    FormsModule, ReactiveFormsModule,
+    ReactiveFormsModule,
+    FormsModule,
     FlexLayoutModule,
-    AngularFireModule
+    HttpClientModule,
+    CalendarModule,  DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
     DatePipe

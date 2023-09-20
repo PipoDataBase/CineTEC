@@ -6,13 +6,13 @@ import { MovieListingComponent } from './components/movie-listing/movie-listing/
 import { BillingTicketsInformationComponent } from './components/movie-listing/billing-tickets-information/billing-tickets-information.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo:'branchOfficeSwitcher' },
+  { path: '', pathMatch: 'full', redirectTo:'branchOfficeSelection' },
   { path: 'branchOfficeSelection', component: BranchOfficeSelectionComponent },
   { 
-    path: 'branchOfficeSwitcher', 
+    path: 'branchOfficeSwitcher/:id',
     component: BranchOfficeSwitcherComponent, 
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'billingTicketInformation' },
+      { path: '', pathMatch: 'full', redirectTo: 'movieListing' },
       { path: 'movieListing', component: MovieListingComponent},
       { path: 'billingTicketInformation', component: BillingTicketsInformationComponent }
     ]
