@@ -72,7 +72,7 @@ export class BranchOfficeSwitcherComponent {
   }
 
   goToMovieListing() {
-    this.router.navigate(['/branchOfficeSwitcher/movieListing']);
+    this.router.navigate(["branchOfficeSwitcher", this.selectedBranchId]);
   }
 
   onLocationSelectionChange(location: string) {
