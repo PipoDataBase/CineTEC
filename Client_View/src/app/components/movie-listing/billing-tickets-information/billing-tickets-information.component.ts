@@ -38,9 +38,11 @@ export class BillingTicketsInformationComponent {
     adultsTickets: 0,
     elderlyTickets: 0
   }
+  totalTickets: number = 0;
+  disableNextButton: boolean = false;
   selectedBranchId: string = '';
-  roomRows: number = 2;
-  roomColumns: number = 2;
+  roomRows: number = 0;
+  roomColumns: number = 0;
   seats: { id: string, isSelected: boolean }[] = [];
   movieProjection: MovieProjection = {
     ImagePath: '',
@@ -83,10 +85,12 @@ export class BillingTicketsInformationComponent {
     })
   }
 
-  updateTicketsCuantity(){
-   console.log(this.tickets.kidsTickets); 
-   console.log(this.tickets.adultsTickets);
-   console.log(this.tickets.elderlyTickets);
+  updateTicketsCuantity() {
+    this.totalTickets = this.tickets.kidsTickets + this.tickets.adultsTickets + this.tickets.elderlyTickets;
+  
+    if (this.totalTickets === 0) {
+      alert("Debe seleccionar al menos un tiquete");
+    }
   }
 
   onSeatClick(seat: { id: string, isSelected: boolean }) {

@@ -53,8 +53,10 @@ export class BranchOfficeSelectionComponent {
   }
 
   movieListing(): void {
-    if (this.selectedBranchId != '') {
+    if (this.selectedBranchId && this.selectedBranchId !== '') {
       this.router.navigate(["branchOfficeSwitcher", this.selectedBranchId]);
+    } else {
+      console.error("selectedBranchId no tiene un valor válido.");
     }
   }
 }

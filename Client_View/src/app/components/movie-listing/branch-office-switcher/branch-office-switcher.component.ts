@@ -75,6 +75,8 @@ export class BranchOfficeSwitcherComponent {
 
   goToMovieListing() {
     this.router.navigate(["branchOfficeSwitcher", this.sharedService.sharedSelectedBranchId]);
+    this.selectedBranchId = this.sharedService.sharedSelectedBranchId;
+    this.update();
   }
 
   onLocationSelectionChange(location: string) {
