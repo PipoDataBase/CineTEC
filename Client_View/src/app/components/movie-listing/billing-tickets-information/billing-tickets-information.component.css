@@ -39,6 +39,10 @@
   color: #17477E;
 }
 
+.seatSelected {
+  color: green; /* Cambia el color del icono cuando está seleccionado */
+}
+
 .ticketsAmountInput {
     display: flex;
     align-items: center;

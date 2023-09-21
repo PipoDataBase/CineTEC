@@ -9,4 +9,5 @@ export interface MovieProjection {
     ProjectionType: string;
     Language: string;
     DateTime: string;
+    RoomId: string;
   }

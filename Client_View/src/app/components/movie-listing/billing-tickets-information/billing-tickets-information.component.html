@@ -1,48 +1,53 @@
-<div class="billingTicketsInformation-wrapper" fxLayout="column" fxLayoutAlign="center center">
-    <mat-stepper class="matStepper-wrapper" [linear]="isLinear" #stepper>
-        <mat-step class="matStep-wrapper" [stepControl]="firstFormGroup">
-          <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Tiquetes</ng-template>
-            
-            <mat-form-field class="ticketsAmountInput" floatLabel="always">
-              <mat-label>Niños</mat-label>
-              <input id="kidsTicketsIpt" matInput type="number" placeholder="1" value="0" min="0" max="99">
-            </mat-form-field>
-            <mat-form-field class="ticketsAmountInput" floatLabel="always">
-              <mat-label>Adultos</mat-label>
-              <input id="adultsTicketsIpt" matInput type="number" placeholder="1" value="0" min="0" max="99">
-            </mat-form-field>
-            <mat-form-field class="ticketsAmountInput" floatLabel="always">
-              <mat-label>Adultos Mayores</mat-label>
-              <input id="elderlyTicketsIpt" matInput type="number" placeholder="1" value="0" min="0" max="99">
-            </mat-form-field>
-            <div>
-              <button mat-raised-button matStepperNext class="matStepperButton" (click)="updateTicketsCuantity()">Seleccionar asientos</button>
-            </div>
+<div class="billingTicketsInformation-wrapper" *ngIf="selectedBranchId" fxLayout="column" fxLayoutAlign="center center">
+  <mat-stepper class="matStepper-wrapper" [linear]="isLinear" #stepper>
+    <mat-step class="matStep-wrapper" [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Tiquetes</ng-template>
 
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="firstFormGroup">
-            <form [formGroup]="firstFormGroup">
-              <ng-template matStepLabel>Asientos</ng-template>  
-              <div class="screen-wrapper" fxLayout="row" fxLayoutAlign="center">
-                <mat-label class="screenLabel">Pantalla</mat-label>
-              </div>         
-              <div class="seatsSelectionGrid">
-                <button class="seatButton" mat-icon-button *ngFor="let seat of seats; let i=index" fxLayout="column">
-                  <mat-icon class="seatIcon">event_seat</mat-icon>
-                </button>
-              </div>
-              <button mat-button matStepperPrevious class="matStepperButton">Regresar</button>
-              <button mat-button matStepperNext class="matStepperButton">Confirmar compra</button>
-            </form>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Confirmación</ng-template>
-          <div>
+        <mat-form-field class="ticketsAmountInput" floatLabel="always">
+          <mat-label>Niños</mat-label>
+          <input matInput type="number" [(ngModel)]="tickets.kidsTickets" id="kidsTickets"
+            [ngModelOptions]="{standalone: true}" value="0" min="0" max="99">
+        </mat-form-field>
+        <mat-form-field class="ticketsAmountInput" floatLabel="always">
+          <mat-label>Adultos</mat-label>
+          <input matInput type="number" [(ngModel)]="tickets.adultsTickets" id="adultsTickets"
+            [ngModelOptions]="{standalone: true}" value="0" min="0" max="99">
+        </mat-form-field>
+        <mat-form-field class="ticketsAmountInput" floatLabel="always">
+          <mat-label>Adultos Mayores</mat-label>
+          <input matInput type="number" [(ngModel)]="tickets.elderlyTickets" id="elderlyTickets"
+            [ngModelOptions]="{standalone: true}" value="0" min="0" max="99">
+        </mat-form-field>
+        <div>
+          <button mat-raised-button matStepperNext class="matStepperButton"
+            (click)="updateTicketsCuantity()">Seleccionar asientos</button>
+        </div>
 
-            <button mat-button matStepperPrevious>Regresar</button>
-          </div>
-        </mat-step>
-    </mat-stepper>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Asientos</ng-template>
+        <div class="screen-wrapper" fxLayout="row" fxLayoutAlign="center">
+          <mat-label class="screenLabel">Pantalla</mat-label>
+        </div>
+        <div class="seatsSelectionGrid">
+          <button class="seatButton" mat-icon-button *ngFor="let seat of seats; let i=index" fxLayout="column"
+            (click)="onSeatClick(seat)">
+            <mat-icon class="seatIcon" [ngClass]="{'seatSelected': seat.isSelected}">event_seat</mat-icon>
+          </button>
+        </div>
+        <button mat-button matStepperPrevious class="matStepperButton mx-3">Regresar</button>
+        <button mat-button matStepperNext class="matStepperButton">Confirmar compra</button>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Confirmación</ng-template>
+      <div>
+
+        <button mat-button matStepperPrevious>Regresar</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
 </div>

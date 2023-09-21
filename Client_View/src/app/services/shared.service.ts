@@ -6,15 +6,20 @@ import { BehaviorSubject, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  //moviesData: MovieProjection[] = [];
+  sharedSelectedBranchId: string = '';
+  sharedMoviesData: MovieProjection = {
+    ImagePath: '',
+    CommercialTitle: '',
+    OriginalTitle: '',
+    Duration: 0,
+    Clasification: '',
+    Director: '',
+    Protagonists: '',
+    ProjectionType: '',
+    Language: '',
+    DateTime: '',
+    RoomId: '',
+  };
 
   constructor() { }
-
-  private selectedBranchIdSubject = new BehaviorSubject<string>('');
-  selectedBranchId$ = this.selectedBranchIdSubject.asObservable();
-
-  setSelectedBranchId(branchId: string) {
-    this.selectedBranchIdSubject.next(branchId);
-  }
-
 }

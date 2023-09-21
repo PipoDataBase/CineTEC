@@ -10,6 +10,7 @@ import { BranchOfficesService } from 'src/app/services/branch-offices.service';
 import { MoviesService } from 'src/app/services/movies.service';
 import { ProjectionsService } from 'src/app/services/projections.service';
 import { RoomsService } from 'src/app/services/rooms.service';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-branch-office-switcher',
@@ -47,7 +48,7 @@ export class BranchOfficeSwitcherComponent {
 
   moviesData: MovieProjection[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router, private branchOfficesService: BranchOfficesService, private roomsService: RoomsService, private projectionsService: ProjectionsService, private moviesService: MoviesService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private branchOfficesService: BranchOfficesService, private roomsService: RoomsService, private projectionsService: ProjectionsService, private moviesService: MoviesService, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe({
@@ -55,6 +56,7 @@ export class BranchOfficeSwitcherComponent {
         const id = params.get('id');
         if (id) {
           this.selectedBranchId = id;
+          this.sharedService.sharedSelectedBranchId = id;
           this.update();
         }
       }
@@ -72,7 +74,7 @@ export class BranchOfficeSwitcherComponent {
   }
 
   goToMovieListing() {
-    this.router.navigate(["branchOfficeSwitcher", this.selectedBranchId]);
+    this.router.navigate(["branchOfficeSwitcher", this.sharedService.sharedSelectedBranchId]);
   }
 
   onLocationSelectionChange(location: string) {
@@ -141,7 +143,7 @@ export class BranchOfficeSwitcherComponent {
         this.moviesService.getMovie(projection.movie_Id).subscribe({
           next: (response) => {
             const movie = response;
-  
+            
             const movieProjection: MovieProjection = {
               ImagePath: movie.imagePath,
               CommercialTitle: movie.commercialName,
@@ -152,7 +154,8 @@ export class BranchOfficeSwitcherComponent {
               Protagonists: movie.protagonists,
               ProjectionType: projection.projectionType,
               Language: projection.language,
-              DateTime: projection.dateTime
+              DateTime: projection.dateTime,
+              RoomId: projection.room_Id
             };
             
             this.moviesData.push(movieProjection);
@@ -163,9 +166,10 @@ export class BranchOfficeSwitcherComponent {
   }
 
   buyTicketsButton(index: number){
-    const textoClickeado = this.moviesData[index];
-    console.log(this.moviesData[index]);
+    this.sharedService.sharedMoviesData = this.moviesData[index];
+    const id = this.selectedBranchId;
+    this.sharedService.sharedSelectedBranchId = id;
     this.selectedBranchId = '';
-    this.router.navigate(["branchOfficeSwitcher", this.selectedBranchId, "billingTicketInformation"]);
+    this.router.navigate(["branchOfficeSwitcher", id, "billingTicketInformation"]);
   }
 }
