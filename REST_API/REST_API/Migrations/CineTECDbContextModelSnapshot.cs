@@ -147,6 +147,56 @@ namespace REST_API.Migrations
                     b.ToTable("Rooms");
                 });
 
+            modelBuilder.Entity("REST_API.Models.Seat", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Public_Id")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("Seat_RoomRoom_Id")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("State_Id")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Seat_RoomRoom_Id");
+
+                    b.ToTable("Seats");
+                });
+
+            modelBuilder.Entity("REST_API.Models.Seat_Room", b =>
+                {
+                    b.Property<Guid>("Room_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Room_Id");
+
+                    b.ToTable("Seat_Rooms");
+                });
+
+            modelBuilder.Entity("REST_API.Models.State", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("States");
+                });
+
             modelBuilder.Entity("REST_API.Models.Projection", b =>
                 {
                     b.HasOne("REST_API.Models.Movie", "Movie")
@@ -177,6 +227,13 @@ namespace REST_API.Migrations
                     b.Navigation("BranchOffice");
                 });
 
+            modelBuilder.Entity("REST_API.Models.Seat", b =>
+                {
+                    b.HasOne("REST_API.Models.Seat_Room", null)
+                        .WithMany("Seats")
+                        .HasForeignKey("Seat_RoomRoom_Id");
+                });
+
             modelBuilder.Entity("REST_API.Models.BranchOffice", b =>
                 {
                     b.Navigation("Rooms");
@@ -185,6 +242,11 @@ namespace REST_API.Migrations
             modelBuilder.Entity("REST_API.Models.Room", b =>
                 {
                     b.Navigation("Projections");
+                });
+
+            modelBuilder.Entity("REST_API.Models.Seat_Room", b =>
+                {
+                    b.Navigation("Seats");
                 });
 #pragma warning restore 612, 618
         }

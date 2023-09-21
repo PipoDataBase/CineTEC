@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace REST_API.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialMigration : Migration
+    public partial class SeatReservation : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -57,6 +57,30 @@ namespace REST_API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Seat_Rooms",
+                columns: table => new
+                {
+                    Room_Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Seat_Rooms", x => x.Room_Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "States",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_States", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Rooms",
                 columns: table => new
                 {
@@ -74,6 +98,25 @@ namespace REST_API.Migrations
                         principalTable: "BranchOffices",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Seats",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Public_Id = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    State_Id = table.Column<int>(type: "int", nullable: false),
+                    Seat_RoomRoom_Id = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Seats", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Seats_Seat_Rooms_Seat_RoomRoom_Id",
+                        column: x => x.Seat_RoomRoom_Id,
+                        principalTable: "Seat_Rooms",
+                        principalColumn: "Room_Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -118,6 +161,11 @@ namespace REST_API.Migrations
                 name: "IX_Rooms_Branch_Id",
                 table: "Rooms",
                 column: "Branch_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Seats_Seat_RoomRoom_Id",
+                table: "Seats",
+                column: "Seat_RoomRoom_Id");
         }
 
         /// <inheritdoc />
@@ -130,10 +178,19 @@ namespace REST_API.Migrations
                 name: "Projections");
 
             migrationBuilder.DropTable(
+                name: "Seats");
+
+            migrationBuilder.DropTable(
+                name: "States");
+
+            migrationBuilder.DropTable(
                 name: "Movies");
 
             migrationBuilder.DropTable(
                 name: "Rooms");
+
+            migrationBuilder.DropTable(
+                name: "Seat_Rooms");
 
             migrationBuilder.DropTable(
                 name: "BranchOffices");
