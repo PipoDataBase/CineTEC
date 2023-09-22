@@ -1,3 +1,45 @@
 <resources>
     <string name="app_name">CineTec_MobileApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cinetec">CineTEC</string>
+    <string name="regresar">Regresar</string>
+    <string name="tiquetes">Tiquetes</string>
+    <string name="asientos">Asientos</string>
+    <string name="confirmaci_n">Confirmación</string>
+    <string name="CineTEC" />
+    <string name="comprar_tiquetes">Comprar tiquetes</string>
+    <string name="oppenheimer">Oppenheimer</string>
+    <string name="_180_min">180 min</string>
+    <string name="nc_17">NC-17</string>
+    <string name="_2d">2D</string>
+    <string name="dob">DOB</string>
+    <string name="_10_01_2023_6_00_pm">10/01/2023 6:00 PM</string>
+    <string name="sound_of_freedom">Sound Of Freedom</string>
+    <string name="_130_min">130 min</string>
+    <string name="pg_13">PG-13</string>
+    <string name="_11_01_2023_6_00_pm">11/01/2023 6:00 PM</string>
+    <string name="barbie">Barbie</string>
+    <string name="_120_min">120 min</string>
+    <string name="_12_01_2023_6_00_pm">12/01/2023 6:00 PM</string>
+    <string name="gran_turismo">Gran Turismo</string>
+    <string name="pg">PG</string>
+    <string name="_13_01_2023_6_00_pm">13/01/2023 6:00 PM</string>
+    <string name="oppenheimer_poster">Oppenheimer poster</string>
+    <string name="soundOfFreedom_poster">Sound of Freedom poster</string>
+    <string name="barbie_poster">Barbie poster</string>
+    <string name="granTurismo_poster">Gran Turismo poster</string>
+    <string name="seleccione_tiquetes">Digite la cantidad de\ntiquetes que desea comprar</string>
+    <string name="ninos">Niños</string>
+    <string name="adultos">Adultos</string>
+    <string name="adultos_mayores">Adultos mayores</string>
+    <string name="seleccione_asientos">Seleccione los asientos que\ndesea comprar</string>
+    <string name="room_seat_button_description">Room Seat Button</string>
+    <string name="pantalla">Pantalla</string>
+    <string name="nombres">Nombre(s)</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="correo">Correo electronico</string>
+    <string name="metodo_pago">Método de pago</string>
+    <string name="DigiteInformacionPago">Digite su información de pago para finalizar su compra</string>
+    <string name="confirmarCantidadesTiquetes">Confrmar tiquetes</string>
 </resources>

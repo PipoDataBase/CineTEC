@@ -30,7 +30,7 @@
         android:fontFamily="@font/roboto_bold"
         android:text="Seleccione una ubicación"
         android:textColor="#eff0eb"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/spnUbicacion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -43,17 +43,17 @@
         android:fontFamily="@font/roboto_bold"
         android:text="Seleccione una sucursal"
         android:textColor="#eff0eb"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/spnSucursal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/spnUbicacion"
-        android:layout_width="281dp"
-        android:layout_height="26dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="50dp"
-        android:backgroundTint="#eff0eb"
+        android:background="@drawable/spinner_style"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/lblSeleccioneSucursal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,10 +61,10 @@
 
     <Spinner
         android:id="@+id/spnSucursal"
-        android:layout_width="281dp"
-        android:layout_height="26dp"
+        android:layout_width="280dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="50dp"
-        android:backgroundTint="#EEEFEA"
+        android:background="@drawable/spinner_style"
         android:backgroundTintMode="src_in"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/btnVerCartelera"
@@ -82,7 +82,7 @@
         android:textColor="#17477E"
         android:textColorHighlight="#EEEFEA"
         android:textColorLink="#EEEFEA"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
