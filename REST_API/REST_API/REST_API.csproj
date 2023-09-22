@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <Folder Include="GeneratedPdfFiles\" />
+    <Folder Include="GeneratedPdfFiles\" />
   </ItemGroup>
 
 </Project>
