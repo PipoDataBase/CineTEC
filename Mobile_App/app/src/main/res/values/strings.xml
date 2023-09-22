@@ -42,4 +42,6 @@
     <string name="metodo_pago">Método de pago</string>
     <string name="DigiteInformacionPago">Digite su información de pago para finalizar su compra</string>
     <string name="confirmarCantidadesTiquetes">Confrmar tiquetes</string>
+    <string name="compra_realizada">Compra realizada\ncon exito!</string>
+    <string name="regresar_cartelera">Regresar a cartelera</string>
 </resources>

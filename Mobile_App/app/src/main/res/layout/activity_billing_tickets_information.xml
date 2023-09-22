@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnReturnMovieListing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -46,7 +46,7 @@
         android:background="#eff0eb"
         android:backgroundTint="#eff0eb"
         android:foregroundTint="#17477E"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/btnReturnMovieListing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblBillingTicketInformationTitle">
@@ -71,6 +71,155 @@
                 android:background="#eff0eb"
                 android:backgroundTint="#eff0eb"
                 android:foregroundTint="#17477E">
+
+                <LinearLayout
+                    android:id="@+id/tabPago"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#eff0eb"
+                    android:backgroundTint="#eff0eb"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblSeleccioneTiquetes7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="50dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/DigiteInformacionPago"
+                        android:textAlignment="center"
+                        android:textColor="#17477E"
+                        android:textSize="24sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fil_txt_fldNombres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/nombres"
+                        android:textAlignment="center"
+                        android:textColorHint="#17477e"
+                        app:hintTextColor="#17477e">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_txtNombres"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fil_txt_fldApellidos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/apellidos"
+                        android:textAlignment="center"
+                        android:textColorHint="#17477e"
+                        app:hintTextColor="#17477e">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_txtApellidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fil_txt_fldCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/correo"
+                        android:textAlignment="center"
+                        android:textColorHint="#17477e"
+                        app:hintTextColor="#17477e">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_txtCorreo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/metodo_pago">
+
+                        <AutoCompleteTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/roboto"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textColorLink="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:id="@+id/btnConfirmBill"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#17477e"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/comprar_tiquetes"
+                        android:textColor="#EEEFEA"
+                        android:textColorHighlight="#EEEFEA"
+                        android:textColorHint="#EEEFEA"
+                        android:textSize="16sp"
+                        app:cornerRadius="25dp" />
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/tabTiquetes"
@@ -196,154 +345,6 @@
                         android:textSize="16sp"
                         app:cornerRadius="25dp" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tabPago"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="#eff0eb"
-                    android:backgroundTint="#eff0eb"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/lblSeleccioneTiquetes7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="25dp"
-                        android:layout_marginBottom="100dp"
-                        android:background="#eff0eb"
-                        android:backgroundTint="#eff0eb"
-                        android:fontFamily="@font/roboto"
-                        android:text="@string/DigiteInformacionPago"
-                        android:textAlignment="center"
-                        android:textColor="#17477E"
-                        android:textSize="24sp" />
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/fil_txt_fldNombres"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginEnd="50dp"
-                        android:layout_marginBottom="25dp"
-                        android:background="#eff0eb"
-                        android:backgroundTint="#eff0eb"
-                        android:hint="@string/nombres"
-                        android:textAlignment="center"
-                        android:textColorHint="#17477e"
-                        app:hintTextColor="#17477e">
-
-                        <!--this is the actual edit text which takes the input-->
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edt_txtNombres"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="text"
-                            android:textColor="#17477e"
-                            android:textColorHighlight="#17477e"
-                            android:textColorHint="#17477e"
-                            android:textSize="20sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/fil_txt_fldApellidos"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginEnd="50dp"
-                        android:layout_marginBottom="25dp"
-                        android:background="#eff0eb"
-                        android:backgroundTint="#eff0eb"
-                        android:hint="@string/apellidos"
-                        android:textAlignment="center"
-                        android:textColorHint="#17477e"
-                        app:hintTextColor="#17477e">
-
-                        <!--this is the actual edit text which takes the input-->
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edt_txtApellidos"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:textColor="#17477e"
-                            android:textColorHighlight="#17477e"
-                            android:textColorHint="#17477e"
-                            android:textSize="20sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/fil_txt_fldCorreo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginEnd="50dp"
-                        android:layout_marginBottom="25dp"
-                        android:background="#eff0eb"
-                        android:backgroundTint="#eff0eb"
-                        android:hint="@string/correo"
-                        android:textAlignment="center"
-                        android:textColorHint="#17477e"
-                        app:hintTextColor="#17477e">
-
-                        <!--this is the actual edit text which takes the input-->
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edt_txtCorreo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto"
-                            android:inputType="number"
-                            android:maxLength="2"
-                            android:textColor="#17477e"
-                            android:textColorHighlight="#17477e"
-                            android:textColorHint="#17477e"
-                            android:textSize="20sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="50dp"
-                        android:layout_marginEnd="50dp"
-                        android:layout_marginBottom="25dp"
-                        android:background="#eff0eb"
-                        android:backgroundTint="#eff0eb"
-                        android:hint="@string/metodo_pago">
-
-                        <AutoCompleteTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:fontFamily="@font/roboto"
-                            android:textColor="#17477e"
-                            android:textColorHighlight="#17477e"
-                            android:textColorHint="#17477e"
-                            android:textColorLink="#17477e"
-                            android:textSize="20sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-
-                    <Button
-                        android:id="@+id/btnBuyOppenheimerTickets2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="10dp"
-                        android:backgroundTint="#17477e"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="@string/comprar_tiquetes"
-                        android:textColor="#EEEFEA"
-                        android:textColorHighlight="#EEEFEA"
-                        android:textColorHint="#EEEFEA"
-                        android:textSize="16sp"
-                        app:cornerRadius="25dp" />
                 </LinearLayout>
 
                 <LinearLayout

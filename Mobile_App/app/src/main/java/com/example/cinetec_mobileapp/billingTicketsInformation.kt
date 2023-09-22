@@ -32,7 +32,7 @@ class billingTicketsInformation : AppCompatActivity() {
         var selectedElderlyTickets: Int = 0;
         var selectedSeats: Int = 0;
 
-        var totalSpecifiedSeats: Int = 0;
+        var totalSpecifiedSeats: Int = 10;
         /*
         val kidsTickets: EditText = findViewById(R.id.edt_txtNinos)
         val adultsTickets: EditText = findViewById(R.id.edt_txtAdultos)
@@ -1495,6 +1495,20 @@ class billingTicketsInformation : AppCompatActivity() {
                 selectedSeats--;
                 seatsStatesArray[99] = 0;
             }
+        }
+
+        val btnIrAConfirmacion: Button = findViewById(R.id.btnConfirmBill)
+
+        btnIrAConfirmacion.setOnClickListener {
+            val goToBillConfirmation: Intent = Intent(this, billingConfirmation:: class.java)
+            startActivity(goToBillConfirmation)
+        }
+
+        val btnIrToCartelera: Button = findViewById(R.id.btnReturnMovieListing)
+
+        btnIrToCartelera.setOnClickListener {
+            val goToPeliculasCartelera: Intent = Intent(this, movieListing:: class.java)
+            startActivity(goToPeliculasCartelera)
         }
     }
 }
