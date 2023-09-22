@@ -19,6 +19,12 @@ namespace REST_API.Data
 
         public DbSet<Movie> Movies { get; set; }
 
+        public DbSet<Seat> Seats { get; set; }
+
+        public DbSet<State> States { get; set; }
+
+        public DbSet<Seat_Room> Seat_Rooms { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

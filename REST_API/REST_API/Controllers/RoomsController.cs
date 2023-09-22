@@ -61,6 +61,7 @@ namespace REST_API.Controllers
             return Ok(JsonSerializer.Serialize(roomRequest, jsonSerializerOptions));
         }
 
+
         [HttpGet]
         [Route("{branch_Id:Guid}/{id:Guid}")]
         public async Task<IActionResult> GetRoom([FromRoute] Guid branch_Id, Guid id)
