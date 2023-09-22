@@ -1,0 +1,27 @@
+<div class="branchOfficeSelection-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>
+                <span class="cine">Cine</span>
+                <span class="tec">TEC</span>
+            </mat-card-title>
+        </mat-card-header>
+        <form class="example-form">
+            <mat-label>Ubicación</mat-label>
+            <mat-select placeholder="Selecciona una ubicación" [ngModel]="currentLocation" name="location"
+                (ngModelChange)="onLocationSelectionChange($event)" class="custom-select">
+                <mat-option *ngFor="let location of locations" [value]="location">
+                    {{ location }}
+                </mat-option>
+            </mat-select>
+            <mat-label>Cine</mat-label>
+            <mat-select placeholder="Selecciona un cine" [(ngModel)]="currentName" name="name"
+                (ngModelChange)="onNameSelectionChange($event)" class="custom-select">
+                <mat-option *ngFor="let name of names" [value]="name">
+                    {{ name }}
+                </mat-option>
+            </mat-select>
+            <button mat-stroked-button class="btn-block custom-button" (click)="movieListing()">Ver cartelera</button>
+        </form>
+    </mat-card>
+</div>

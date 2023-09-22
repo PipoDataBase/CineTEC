@@ -1,0 +1,54 @@
+<div class="branchOfficeSwitcher-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <button (click)="goToMovieListing()" style="background: none; border: none; cursor: pointer; padding: 0;">
+        <mat-label class="cine">Cine</mat-label>
+        <mat-label class="tec">TEC</mat-label>
+    </button>
+
+    <div class="locationSwitcher" fxLayout="column" fxLayoutAlign="center center">
+        <mat-label class="location-branchOffice-Label">Ubicación</mat-label>
+        <mat-select placeholder="Selecciona una ubicación" [ngModel]="currentLocation" name="location"
+            (ngModelChange)="onLocationSelectionChange($event)" class="custom-select">
+            <mat-option *ngFor="let location of locations" [value]="location">
+                {{ location }}
+            </mat-option>
+        </mat-select>
+    </div>
+    <div class="branchOfficeSwitcher" fxLayout="column" fxLayoutAlign="center center">
+        <mat-label class="location-branchOffice-Label">Sucursal</mat-label>
+        <mat-select placeholder="Selecciona un cine" [(ngModel)]="currentName" name="name"
+            (ngModelChange)="onNameSelectionChange($event)" class="custom-select">
+            <mat-option *ngFor="let name of names" [value]="name">
+                {{ name }}
+            </mat-option>
+        </mat-select>
+    </div>
+</div>
+
+<div class="movieListing-grid" *ngIf="selectedBranchId">
+    <mat-card *ngFor="let movie of moviesData; let i=index" fxLayout="column">
+        <img src="{{ movie.ImagePath }}" alt="Movie Poster" style="width: 200px; height: 300px;" />
+        <mat-label class="h1"> {{ movie.OriginalTitle }} </mat-label>
+        <div class="durationClassification-wrapper" fxLayout="row">
+            <mat-card>
+                <mat-label>{{ movie.Duration + ' min' }}</mat-label>
+            </mat-card>
+            <mat-card>
+                <mat-label>{{ movie.Clasification }}</mat-label>
+            </mat-card>
+        </div>
+        <div class="durationClassification-wrapper" fxLayout="row">
+            <mat-card>
+                <mat-label>{{ movie.ProjectionType}}</mat-label>
+            </mat-card>
+            <mat-card>
+                <mat-label>{{ movie.Language }}</mat-label>
+            </mat-card>
+            <mat-card>
+                <mat-label>{{ movie.DateTime }}</mat-label>
+            </mat-card>
+        </div>
+        <button (click)="buyTicketsButton(i)" mat-stroked-button>Comprar tiquetes</button>
+    </mat-card>
+</div>
+
+<router-outlet></router-outlet>
