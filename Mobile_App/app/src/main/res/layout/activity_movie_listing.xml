@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#17477e"
+    tools:context=".movieListing" >
+
+    <TextView
+        android:id="@+id/lblMovieListingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/cinetec"
+        android:textColor="#eff0eb"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scr_viwMovieListing"
+        android:layout_width="391dp"
+        android:layout_height="725dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#17477e"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblMovieListingTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:textAlignment="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdOppenheimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgOppenheimer"
+                        android:layout_width="300dp"
+                        android:layout_height="441dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:contentDescription="@string/oppenheimer_poster"
+                        android:layerType="none"
+                        app:srcCompat="@drawable/oppenheimer_poster" />
+
+                    <TextView
+                        android:id="@+id/lblOppenheimerTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/oppenheimer"
+                        android:textColor="#17477E"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwOppenheimerDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblOppenheimerDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/_180_min"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textColorHint="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwOppenheimerClassification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblOppenheimerClassification"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/nc_17"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textColorHint="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwOppenheimerProyectionType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblOppenheimerProyectionType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/_2d"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwOppenheimerLanguage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblOppenheimerLanguage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/dob"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textColorHint="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwOppenheimerDateTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblOppenheimerDateTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/_10_01_2023_6_00_pm"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textColorHint="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnBuyOppenheimerTickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#17477e"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/comprar_tiquetes"
+                        android:textColor="#EEEFEA"
+                        android:textColorHighlight="#EEEFEA"
+                        android:textColorHint="#EEEFEA"
+                        android:textSize="16sp"
+                        app:cornerRadius="25dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdSoundOfFreedom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgSoundOfFreedom"
+                        android:layout_width="300dp"
+                        android:layout_height="444dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:contentDescription="@string/soundOfFreedom_poster"
+                        android:layerType="none"
+                        app:srcCompat="@drawable/sound_of_freedom_poster" />
+
+                    <TextView
+                        android:id="@+id/lblSoundOfFreedom"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/sound_of_freedom"
+                        android:textColor="#17477E"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwSoundOfFreedomDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblSoundOfFreedomDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/_130_min"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textColorHint="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwSoundOfFreedomClassification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblSoundOfFreedomClassification"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/pg_13"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textColorHint="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwSoundOfFreedomProyectionType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblSoundOfFreedomProyectionType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/_2d"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textColorHint="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwSoundOfFreedomLanguage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblSoundOfFreedomLanguage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/dob"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textColorHint="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwSoundOfFreedomDateTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblSoundOfFreedomDateTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:text="@string/_11_01_2023_6_00_pm"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textColorHint="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnBuySoundOfFreedomTickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#17477e"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/comprar_tiquetes"
+                        android:textColor="#EEEFEA"
+                        android:textColorHighlight="#EEEFEA"
+                        android:textColorHint="#EEEFEA"
+                        android:textSize="16sp"
+                        app:cornerRadius="25dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdBarbie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgBarbie"
+                        android:layout_width="300dp"
+                        android:layout_height="444dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:contentDescription="@string/barbie_poster"
+                        android:layerType="none"
+                        app:srcCompat="@drawable/barbie_poster" />
+
+                    <TextView
+                        android:id="@+id/lblBarbieTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:shadowColor="#17477e"
+                        android:text="@string/barbie"
+                        android:textColor="#17477e"
+                        android:textColorHighlight="#17477e"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwBarbieDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblBarbieDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/_120_min"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwBarbieClassification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblBarbieClassification"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/pg_13"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwBarbieProyectionType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblBarbieProyectionType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/_2d"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwBarbieLanguage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblBarbieLanguage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/dob"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwBarbieDateTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblBarbieDateTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/_12_01_2023_6_00_pm"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnBuyBarbieTickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#17477e"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/comprar_tiquetes"
+                        android:textColor="#EEEFEA"
+                        android:textColorHighlight="#EEEFEA"
+                        android:textColorHint="#EEEFEA"
+                        android:textSize="16sp"
+                        app:cornerRadius="25dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/crdGranTurismo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="10dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgGranTurismo"
+                        android:layout_width="300dp"
+                        android:layout_height="375dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:contentDescription="@string/granTurismo_poster"
+                        android:layerType="none"
+                        app:srcCompat="@drawable/gran_turismo_poster" />
+
+                    <TextView
+                        android:id="@+id/lblGranTurismoTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:shadowColor="#17477e"
+                        android:text="@string/gran_turismo"
+                        android:textColor="#17477e"
+                        android:textColorHighlight="#17477e"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwGranTurismoDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblGranTurismoDuration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/_130_min"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwGranTurismoClassification"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblGranTurismoClassification"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/pg"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwGranTurismoProyectionType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblGranTurismoProyectionType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/_2d"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwGranTurismoLanguage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblGranTurismoLanguage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/dob"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/crd_viwGranTurismoDateTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardBackgroundColor="#eff0eb"
+                            app:cardCornerRadius="25dp">
+
+                            <TextView
+                                android:id="@+id/lblGranTurismoDateTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="bottom"
+                                android:shadowColor="#17477e"
+                                android:text="@string/_13_01_2023_6_00_pm"
+                                android:textColor="#17477e"
+                                android:textColorHighlight="#17477e"
+                                android:textSize="14sp" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnBuyGranTurismoTickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#17477e"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/comprar_tiquetes"
+                        android:textColor="#EEEFEA"
+                        android:textColorHighlight="#EEEFEA"
+                        android:textColorHint="#EEEFEA"
+                        android:textSize="16sp"
+                        app:cornerRadius="25dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

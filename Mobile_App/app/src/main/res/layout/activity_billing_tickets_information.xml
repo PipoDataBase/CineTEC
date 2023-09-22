@@ -1,0 +1,1491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#17477E"
+    tools:context=".billingTicketsInformation">
+
+    <TextView
+        android:id="@+id/lblBillingTicketInformationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/cinetec"
+        android:textColor="#eff0eb"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="#eff0eb"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/regresar"
+        android:textColor="#17477e"
+        android:textColorHighlight="#17477e"
+        android:textColorHint="#17477e"
+        android:textSize="16sp"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TabHost
+        android:id="@+id/tab_hstBillingTicketsInformation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="#eff0eb"
+        android:backgroundTint="#eff0eb"
+        android:foregroundTint="#17477E"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblBillingTicketInformationTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#eff0eb"
+                android:backgroundTint="#eff0eb"
+                android:foregroundTint="#17477E" />
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eff0eb"
+                android:backgroundTint="#eff0eb"
+                android:foregroundTint="#17477E">
+
+                <LinearLayout
+                    android:id="@+id/tabTiquetes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center_horizontal|top"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblSeleccioneTiquetes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="50dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/seleccione_tiquetes"
+                        android:textAlignment="center"
+                        android:textColor="#17477E"
+                        android:textSize="24sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fil_txt_fldNinos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/ninos"
+                        android:textAlignment="center"
+                        android:textColorHint="#17477e"
+                        app:hintTextColor="#17477e">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_txtNinos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fil_txt_fldAdultos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/adultos"
+                        android:textAlignment="center"
+                        android:textColorHint="#17477e"
+                        app:hintTextColor="#17477e">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_txtAdultos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="true"
+                            android:focusable="auto"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fil_txt_fldAdultosMayores"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/adultos_mayores"
+                        android:textAlignment="center"
+                        android:textColorHint="#17477e"
+                        app:hintTextColor="#17477e">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_txtAdultosmayores"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btnConfirmTickets"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#17477e"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/confirmarCantidadesTiquetes"
+                        android:textColor="#EEEFEA"
+                        android:textColorHighlight="#EEEFEA"
+                        android:textColorHint="#EEEFEA"
+                        android:textSize="16sp"
+                        app:cornerRadius="25dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabPago"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#eff0eb"
+                    android:backgroundTint="#eff0eb"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblSeleccioneTiquetes7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="100dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/DigiteInformacionPago"
+                        android:textAlignment="center"
+                        android:textColor="#17477E"
+                        android:textSize="24sp" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fil_txt_fldNombres"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/nombres"
+                        android:textAlignment="center"
+                        android:textColorHint="#17477e"
+                        app:hintTextColor="#17477e">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_txtNombres"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fil_txt_fldApellidos"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/apellidos"
+                        android:textAlignment="center"
+                        android:textColorHint="#17477e"
+                        app:hintTextColor="#17477e">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_txtApellidos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/fil_txt_fldCorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/correo"
+                        android:textAlignment="center"
+                        android:textColorHint="#17477e"
+                        app:hintTextColor="#17477e">
+
+                        <!--this is the actual edit text which takes the input-->
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_txtCorreo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:hint="@string/metodo_pago">
+
+                        <AutoCompleteTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/roboto"
+                            android:textColor="#17477e"
+                            android:textColorHighlight="#17477e"
+                            android:textColorHint="#17477e"
+                            android:textColorLink="#17477e"
+                            android:textSize="20sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:id="@+id/btnBuyOppenheimerTickets2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:backgroundTint="#17477e"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/comprar_tiquetes"
+                        android:textColor="#EEEFEA"
+                        android:textColorHighlight="#EEEFEA"
+                        android:textColorHint="#EEEFEA"
+                        android:textSize="16sp"
+                        app:cornerRadius="25dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tabAsientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#eff0eb"
+                    android:backgroundTint="#eff0eb"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/lblSeleccioneTiquetes5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="25dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/seleccione_asientos"
+                        android:textAlignment="center"
+                        android:textColor="#17477E"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/lblSeleccioneTiquetes6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="25dp"
+                        android:background="#17477e"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/pantalla"
+                        android:textAlignment="center"
+                        android:textColor="#eff0eb"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/roomColumn"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#eff0eb"
+                        android:backgroundTint="#eff0eb"
+                        android:gravity="start"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/roomRow1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat1_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/roomRow2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat2_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/roomRow3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat3_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/roomRow4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat4_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/roomRow5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat5_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/roomRow6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat6_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/roomRow7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat7_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/roomRow8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat8_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/roomRow9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat9_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/roomRow10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#eff0eb"
+                            android:backgroundTint="#eff0eb"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_1"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_2"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_3"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_4"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_5"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_6"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_7"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_8"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_9"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+
+                            <ImageButton
+                                android:id="@+id/roomSeat10_10"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:backgroundTint="#eff0eb"
+                                android:contentDescription="@string/room_seat_button_description"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/available_seat_icon" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
