@@ -3,29 +3,28 @@
     <mat-step class="matStep-wrapper" [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Tiquetes</ng-template>
-
-        <mat-form-field class="ticketsAmountInput" floatLabel="always">
+        <mat-form-field class="ticketsAmountInput">
           <mat-label>Niños</mat-label>
           <input matInput type="number" [(ngModel)]="tickets.kidsTickets" id="kidsTickets"
-            [ngModelOptions]="{standalone: true}" value="0" min="0" max="99">
+            [ngModelOptions]="{standalone: true}" value="0" min="0" max="99" (ngModelChange)="uptateTotalTickets()">
         </mat-form-field>
-        <mat-form-field class="ticketsAmountInput" floatLabel="always">
+        <mat-form-field class="ticketsAmountInput">
           <mat-label>Adultos</mat-label>
           <input matInput type="number" [(ngModel)]="tickets.adultsTickets" id="adultsTickets"
-            [ngModelOptions]="{standalone: true}" value="0" min="0" max="99">
+            [ngModelOptions]="{standalone: true}" value="0" min="0" max="99" (ngModelChange)="uptateTotalTickets()">
         </mat-form-field>
-        <mat-form-field class="ticketsAmountInput" floatLabel="always">
+        <mat-form-field class="ticketsAmountInput">
           <mat-label>Adultos Mayores</mat-label>
           <input matInput type="number" [(ngModel)]="tickets.elderlyTickets" id="elderlyTickets"
-            [ngModelOptions]="{standalone: true}" value="0" min="0" max="99">
+            [ngModelOptions]="{standalone: true}" value="0" min="0" max="99" (ngModelChange)="uptateTotalTickets()">
         </mat-form-field>
         <div>
-          <button mat-raised-button matStepperNext class="matStepperButton"
-            (click)="updateTicketsCuantity()">Seleccionar asientos</button>
+          <button mat-raised-button matStepperNext class="matStepperButton" mat-button
+            [disabled]="!enableButton">Seleccionar asientos</button>
         </div>
-
       </form>
     </mat-step>
+
     <mat-step [stepControl]="firstFormGroup">
       <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Asientos</ng-template>
@@ -39,15 +38,39 @@
           </button>
         </div>
         <button mat-button matStepperPrevious class="matStepperButton mx-3">Regresar</button>
-        <button mat-button matStepperNext class="matStepperButton">Confirmar compra</button>
+        <button mat-button matStepperNext class="matStepperButton">Continuar</button>
       </form>
     </mat-step>
-    <mat-step>
-      <ng-template matStepLabel>Confirmación</ng-template>
-      <div>
 
-        <button mat-button matStepperPrevious>Regresar</button>
-      </div>
+    <mat-step class="matStep-wrapper" [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup" class="formulario">
+        <ng-template matStepLabel>Pago</ng-template>
+        <mat-form-field class="clienttInput">
+          <mat-label>Nombre(s)</mat-label>
+          <input matInput type="text" [(ngModel)]="client.names" id="names" [ngModelOptions]="{standalone: true}"
+            (ngModelChange)="checkClientInfo()">
+        </mat-form-field>
+        <mat-form-field class="clienttInput">
+          <mat-label>Apellidos</mat-label>
+          <input matInput type="text" [(ngModel)]="client.lastnames" id="lastnames"
+            [ngModelOptions]="{standalone: true}" (ngModelChange)="checkClientInfo()">
+        </mat-form-field>
+        <mat-form-field class="clienttInput">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput type="email" style="background-color: transparent;" [(ngModel)]="client.email" id="email"
+            [ngModelOptions]="{standalone: true}" (ngModelChange)="checkClientInfo()">
+        </mat-form-field>
+        <mat-form-field class="clienttInput">
+          <mat-select placeholder="Método de pago" [(ngModel)]="client.paymentMethod" id="paymentMethod"
+            [ngModelOptions]="{standalone: true}" (ngModelChange)="checkClientInfo()">
+            <mat-option value="A">Tarjeta crédito/débito</mat-option>
+            <mat-option value="B">Efectivo</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-button matStepperPrevious class="matStepperButton mx-3">Regresar</button>
+        <button mat-button matStepperNext class="matStepperButton" [disabled]="!enablePay"
+          (click)="pay()">Pagar</button>
+      </form>
     </mat-step>
   </mat-stepper>
 </div>

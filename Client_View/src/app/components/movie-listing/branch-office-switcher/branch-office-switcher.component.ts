@@ -48,7 +48,7 @@ export class BranchOfficeSwitcherComponent {
 
   moviesData: MovieProjection[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router, private branchOfficesService: BranchOfficesService, private roomsService: RoomsService, private projectionsService: ProjectionsService, private moviesService: MoviesService, private sharedService: SharedService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private branchOfficesService: BranchOfficesService, private roomsService: RoomsService, private projectionsService: ProjectionsService, private moviesService: MoviesService, private sharedService: SharedService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe({
@@ -102,30 +102,30 @@ export class BranchOfficeSwitcherComponent {
     }
   }
 
-  update(): void {  
+  update(): void {
     this.moviesData = [];
     this.projectionDictionary = {};
     this.branchOfficesService.getBranch(this.selectedBranchId).subscribe({
       next: (response) => {
         this.branchDetails = response;
-  
+
         this.roomsService.getAllRooms(this.branchDetails.id).subscribe({
           next: (rooms) => {
             this.rooms = rooms;
-  
+
             const projectionObservables = this.rooms.map(room =>
               this.projectionsService.getAllProjections(room.id)
                 .pipe(
                   catchError(error => of([]))
                 )
             );
-  
+
             forkJoin(projectionObservables).subscribe(projectionArrays => {
               projectionArrays.forEach((projections, index) => {
                 const room = this.rooms[index];
                 this.projectionDictionary[room.id] = projections;
               });
-  
+
               // Luego de cargar las proyecciones, aquí es donde empezamos a llenar moviesData
               this.fillMoviesData();
             });
@@ -137,7 +137,7 @@ export class BranchOfficeSwitcherComponent {
       }
     });
   }
-  
+
   fillMoviesData() {
     for (let key of Object.keys(this.projectionDictionary)) {
       const projections = this.projectionDictionary[key];
@@ -145,7 +145,7 @@ export class BranchOfficeSwitcherComponent {
         this.moviesService.getMovie(projection.movie_Id).subscribe({
           next: (response) => {
             const movie = response;
-            
+
             const movieProjection: MovieProjection = {
               ImagePath: movie.imagePath,
               CommercialTitle: movie.commercialName,
@@ -159,7 +159,7 @@ export class BranchOfficeSwitcherComponent {
               DateTime: projection.dateTime,
               RoomId: projection.room_Id
             };
-            
+
             this.moviesData.push(movieProjection);
           }
         });
@@ -167,7 +167,7 @@ export class BranchOfficeSwitcherComponent {
     }
   }
 
-  buyTicketsButton(index: number){
+  buyTicketsButton(index: number) {
     this.sharedService.sharedMoviesData = this.moviesData[index];
     const id = this.selectedBranchId;
     this.sharedService.sharedSelectedBranchId = id;

@@ -26,7 +26,7 @@
 
 <div class="movieListing-grid" *ngIf="selectedBranchId">
     <mat-card *ngFor="let movie of moviesData; let i=index" fxLayout="column">
-        <img src="{{ movie.ImagePath }}" alt="Movie Poster" style="width: 200px; height: 300px;"/>
+        <img src="{{ movie.ImagePath }}" alt="Movie Poster" style="width: 200px; height: 300px;" />
         <mat-label class="h1"> {{ movie.OriginalTitle }} </mat-label>
         <div class="durationClassification-wrapper" fxLayout="row">
             <mat-card>

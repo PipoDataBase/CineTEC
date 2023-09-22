@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
-import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatStepperModule} from '@angular/material/stepper';
-import {MatButtonModule} from '@angular/material/button';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { NgClass, NgFor, NgForOf, NgIf } from "@angular/common";
 import { MatIconModule } from '@angular/material/icon';
@@ -12,6 +12,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
 import { MovieProjection } from 'src/app/models/movie-projection.module';
 import { RoomsService } from 'src/app/services/rooms.service';
+import { Client } from 'src/app/models/client.module';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-billing-tickets-information',
@@ -26,6 +29,8 @@ import { RoomsService } from 'src/app/services/rooms.service';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatSelectModule,
+    MatOptionModule,
     NgForOf,
     NgIf,
     NgClass,
@@ -33,17 +38,6 @@ import { RoomsService } from 'src/app/services/rooms.service';
   ],
 })
 export class BillingTicketsInformationComponent {
-  tickets: Tickets = {
-    kidsTickets: 0,
-    adultsTickets: 0,
-    elderlyTickets: 0
-  }
-  totalTickets: number = 0;
-  disableNextButton: boolean = false;
-  selectedBranchId: string = '';
-  roomRows: number = 0;
-  roomColumns: number = 0;
-  seats: { id: string, isSelected: boolean }[] = [];
   movieProjection: MovieProjection = {
     ImagePath: '',
     CommercialTitle: '',
@@ -57,8 +51,26 @@ export class BillingTicketsInformationComponent {
     DateTime: '',
     RoomId: '',
   }
+  tickets: Tickets = {
+    kidsTickets: 0,
+    adultsTickets: 0,
+    elderlyTickets: 0
+  }
+  client: Client = {
+    names: '',
+    lastnames: '',
+    email: '',
+    paymentMethod: ''
+  }
+  enableButton: boolean = false;
+  enablePay: boolean = false;
+  selectedBranchId: string = '';
+  roomRows: number = 0;
+  roomColumns: number = 0;
+  seats: { id: string, isSelected: boolean }[] = [];
+  paymentMethod: string = '';
 
-  constructor(private _formBuilder: FormBuilder, private route: ActivatedRoute, private sharedService: SharedService, private roomsService: RoomsService) {}
+  constructor(private _formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router, private sharedService: SharedService, private roomsService: RoomsService) { }
 
   ngOnInit() {
     this.movieProjection = this.sharedService.sharedMoviesData;
@@ -85,17 +97,29 @@ export class BillingTicketsInformationComponent {
     })
   }
 
-  updateTicketsCuantity() {
-    this.totalTickets = this.tickets.kidsTickets + this.tickets.adultsTickets + this.tickets.elderlyTickets;
-  
-    if (this.totalTickets === 0) {
-      alert("Debe seleccionar al menos un tiquete");
-    }
+  uptateTotalTickets() {
+    const totalTickets = this.tickets.kidsTickets + this.tickets.adultsTickets + this.tickets.elderlyTickets;
+    this.enableButton = totalTickets >= 1;
   }
 
   onSeatClick(seat: { id: string, isSelected: boolean }) {
     console.log(`Asiento seleccionado: ${seat}`);
     seat.isSelected = !seat.isSelected;
+  }
+
+  checkClientInfo() {
+    const isNotDefault = Object.values(this.client).every(value => value !== '');
+    if (isNotDefault) {
+      this.enablePay = true;
+    }
+    else {
+      this.enablePay = false;
+    }
+  }
+
+  pay() {
+    alert("Pago realizado, disfruta de la película");
+    this.router.navigate(["branchOfficeSelection"]);
   }
 
   firstFormGroup = this._formBuilder.group({
